@@ -26,7 +26,7 @@ import Pom.Org;
 
 public class Assignment3 extends BaseClass
 {
-	@Test(groups= {"contact"})
+	@Test(groups= {"smoketest"})
 	public void createOrganisationTest() throws Throwable
 	{
 		

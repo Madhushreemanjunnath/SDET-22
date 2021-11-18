@@ -3,8 +3,9 @@
 <suite name="Suite">
 <groups>
   <run>
-  <include name ="contact">
-  </include></run></groups>
+  <include name ="smoketest">
+  </include>
+  </run></groups>
   <test thread-count="5" name="Test">
   
     <classes>

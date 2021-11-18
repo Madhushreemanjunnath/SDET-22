@@ -21,6 +21,7 @@ import com.crm.vtiger.genericUtilies.WebDriverUtilities;
 public class BaseClass {
 	public WebDriver driver=null;
 	WebDriverUtilities wu=new WebDriverUtilities();
+	public static WebDriver sdriver;c
 	
      public FileUtility fu=new FileUtility();
     @BeforeSuite(groups= {"smoketest"})
@@ -47,7 +48,7 @@ public class BaseClass {
     	driver.get(URL);
     	driver.manage().window().maximize();
     	wu.waitUntilPageLoad(driver);
-    	
+    	sdriver=driver;
     	
     }  
     @BeforeMethod(groups= {"smoketest"})
@@ -66,7 +67,8 @@ public class BaseClass {
     	//sign out of app
     	Thread.sleep(1000);
     	OpeningPage op=new OpeningPage(driver );
-    	  op.getVtiger().click();
+    	wu.waitAndClick(op.getVtiger());
+    	  Thread.sleep(2000);
      	op.getLogout().click();
     		
     }

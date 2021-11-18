@@ -9,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.vtiger.genericUtilies.BaseClass1;
@@ -21,10 +23,10 @@ import Pom.Actions;
 import Pom.BaseClass;
 import Pom.ContactDetails;
 import Pom.OpeningPage;
-
+@Listeners(com.crm.vtiger.genericUtilies.ILisenter.class)
 public class Assignment1 extends BaseClass
 {
-		@Test(groups= {"contact"})
+		@Test(groups= {"smoketest"})
 	public  void createContactTest()  throws Throwable {
 		
 		//read data from property file
@@ -35,8 +37,10 @@ public class Assignment1 extends BaseClass
 	  	    //connection();
 	    //Launch the 
 	    //launchBrowser(driver);
+			Assert.fail();
 		//Login
 	    //login(driver);
+	
 		
 			//Action
 		Thread.sleep(1000);
@@ -44,6 +48,7 @@ public class Assignment1 extends BaseClass
 		WebDriverUtilities wd=new WebDriverUtilities();
 		
 		wd.waitAndClick(a.getActions());
+		String home=driver.getWindowHandle();
 	   Actions a1=new Actions(driver);
 	   String parent=driver.getWindowHandle();
 	   System.out.println(parent);
@@ -56,7 +61,9 @@ public class Assignment1 extends BaseClass
      
    
        c.enterDetails(driver);
-       wd.switchToWindow(driver,parent);
+       
+       //Thread.sleep(2000);
+       
        // Thread.sleep(1000);
         
 			//logout

@@ -28,12 +28,12 @@ public class BaseClass1 {
     	//dlib.connection();
     	System.out.println("+++++ DB connection+++++");
    }
-    @Parameters(value={"browser"})
+    @Parameters(value={"BROWSER"})
     @BeforeClass(groups= {"smoketest","regressiontest"})
-    public  void launchBrowser() throws Throwable
+    public  void launchBrowser(String BROWSER) throws Throwable
     {
     	//read the data from property file
-    	String BROWSER=fu.getProperty("browser");
+    	//String BROWSER=fu.getProperty("browser");
     	String URL=fu.getProperty("url");
     	if(BROWSER.equalsIgnoreCase("chrome"))
     	{

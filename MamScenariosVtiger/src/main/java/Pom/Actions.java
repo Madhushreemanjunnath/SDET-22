@@ -33,12 +33,13 @@ private WebElement contact;//.click();
 
 
 
+
 @FindBy(xpath="//button[text()='View full form']")
 private WebElement cFullForm;//.click();
 public WebElement getContact() {
 	return contact;
 }
-
+////*[@id="LBL_CONTACT_INFORMATION"]/div/div/div[7]/div[2]/div/div/div[1]/div/div/div/span[1]
 public WebElement getAddcontact() {
 	return addcontact;
 }
